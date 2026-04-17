@@ -1,5 +1,17 @@
 # Definir la imagen Base
-FROM python:3.9-slim
+FROM ubuntu:20.04
+
+# Activar una VE del sistema operativo
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Actualizar el sistema y se instalan paquetes
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    python3-dev \
+    build-essential \
+    wget && \
+    apt-get clean
 
 # actualizar pip e instalar Jupiter notebook
 RUN pip3 install --upgrade pip && \
