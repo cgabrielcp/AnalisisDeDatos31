@@ -1,0 +1,39 @@
+# Definir la imagen Base
+FROM ubuntu:20.04
+
+# Activar una VE del sistema operativo
+ENV DEBIAN_FRONTED=noninteractive
+
+# Actualizar el sistema y se instalan paquetes
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    python3-dev \
+    build-essential \
+    wget && \
+    apt-get clean
+
+# actualizar pip e instalar Jupiter notebook
+RUN pip3 install --upgrade pip && \
+    pip3 install notebook==6.5.6
+
+#Se define el directorio.
+WORKDIR /workspace    
+
+# Se crea el directorio donde se guardara las configuraciones
+RUN mkdir -p /root/.jupyter
+
+# Agregar las configuraciones basicas
+RUN echo "c.NotebookApp.token = ''" >> /root/.jupyter/jupyter_notebook_config.py \
+    echo "c.NotebookApp.pasword = ''" >> /root/.jupyter/jupyter_notebook_config.py \
+    echo "c.NotebookApp.open_browser = False" >> /root/.jupyter/jupyter_notebook_config.py \
+    echo "c.NotebookApp.allow_root = True" >> /root/.jupyter/jupyter_notebook_config.py
+
+
+# Puerto de exposicion
+EXPOSE 8888
+
+#Inicio del contenedor
+CMD [ "jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root" ]
+
+
