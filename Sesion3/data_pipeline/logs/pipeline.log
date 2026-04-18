@@ -1,0 +1,15 @@
+2026-04-18 16:44:44,795 - INFO - Conexión a la base de datos establecida correctamente.
+2026-04-18 16:44:44,893 - INFO - Archivo data/departments.csv leído exitosamente.
+2026-04-18 16:44:44,899 - INFO - Archivo data/categories.csv leído exitosamente.
+2026-04-18 16:44:44,934 - INFO - Archivo data/customers.csv leído exitosamente.
+2026-04-18 16:44:44,980 - INFO - Archivo data/products.csv leído exitosamente.
+2026-04-18 16:44:45,171 - INFO - Archivo data/orders.csv leído exitosamente.
+2026-04-18 16:44:45,338 - INFO - Archivo data/order_items.csv leído exitosamente.
+2026-04-18 16:44:45,356 - INFO - Recalculando order_item_subtotal.
+2026-04-18 16:44:45,895 - INFO - Datos cargados exitosamente en la tabla departments.
+2026-04-18 16:44:45,927 - INFO - Datos cargados exitosamente en la tabla categories.
+2026-04-18 16:44:46,720 - INFO - Datos cargados exitosamente en la tabla customers.
+2026-04-18 16:44:46,839 - INFO - Datos cargados exitosamente en la tabla products.
+2026-04-18 16:44:49,560 - INFO - Datos cargados exitosamente en la tabla orders.
+2026-04-18 16:44:56,832 - INFO - Datos cargados exitosamente en la tabla order_items.
+2026-04-18 16:44:56,833 - INFO - Pipeline de datos ejecutado exitosamente.
